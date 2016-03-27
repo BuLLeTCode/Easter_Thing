@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Happy Easter!</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+  	<button id="showMe" type="submit">Parādīt apsveikumu!</button>
+
+ 	<div id="canvas_object" hidden>
+	    <canvas id="myCanvas" width="778" height="500"></canvas>
+	    <script>
+	      var canvas = document.getElementById('myCanvas');
+	      var context = canvas.getContext('2d');
+	      var imageObj = new Image();
+
+	      imageObj.onload = function() {
+	        context.drawImage(imageObj, 10, 10);
+	      };
+	      imageObj.src = 'https://s-media-cache-ak0.pinimg.com/736x/7a/f9/81/7af98129a7ac351655d2c15f7ba24594.jpg'
+
+	      var eggObj = new Image();
+
+	      $("#showMe").click(function(){
+	        context.drawImage(eggObj, 20, 60);
+	        //context.globalAlpha=0.5; // Half opacity
+	      });
+	      eggObj.src = 'http://178.62.72.32/random_pictures/egg1.png'      
+
+	      var eggObj2 = new Image();
+
+	      $("#showMe").click(function(){
+	        context.drawImage(eggObj2, 220, 100);
+	        //context.globalAlpha=0.5; // Half opacity
+	      });
+	      eggObj2.src = 'http://178.62.72.32/random_pictures/egg2.png'   
+
+	      var eggObj3 = new Image();
+
+	      $("#showMe").click(function(){
+	        context.drawImage(eggObj3, 440, 140);
+	        //context.globalAlpha=0.5; // Half opacity
+	      });
+	      eggObj3.src = 'http://178.62.72.32/random_pictures/egg3.png'      
+
+	      $("#showMe").click(function(){
+	      	console.log("Init");
+            can = document.getElementById("myCanvas");
+            ctx= can.getContext("2d");
+            ctx.fillStyle = "pink";
+            ctx.font = "40pt Helvetica";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Sveiciens Lieldienās!", 400, 50);        
+            });
+      
+    	</script>
+    </div>
+
+    
+
+    <script>
+    	$(document).ready(function(){
+    		$("#showMe").click(function(){
+        		$("#canvas_object").toggle("1000");
+        		$("#div1").fadeIn(3000);
+		        $("#div2").fadeIn(3000);
+		        $("#div3").fadeIn(3000);
+    		});
+		});
+    </script>
+  </body>
+</html>      
